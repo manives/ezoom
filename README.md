@@ -62,8 +62,10 @@ Para deixar o ambiente do projeto Laravel funcionando, você precisa executar al
    ```
 
    Isso criará as tabelas necessárias no banco de dados de acordo com as migrações definidas no diretório `database/migrations`.
+   ### Seu usuário para acesso será:
+   "rodrigo.rossa@ezoom.com.br" e senha: "senha456"
 
-9. Execute o comando php artisan db:seed para popular o banco de dados com dados de exemplo.
+10. Execute o comando php artisan db:seed para popular o banco de dados com dados de exemplo.
 ```
 php artisan db:seed
 ```
@@ -76,4 +78,5 @@ php artisan db:seed
 
    Isso iniciará o servidor em `http://localhost:8000`, onde você poderá acessar sua aplicação Laravel no navegador.
 
-Agora o ambiente do projeto Laravel está configurado e você pode começar a desenvolver sua aplicação. Certifique-se de revisar a documentação do Laravel para obter mais detalhes sobre como trabalhar com o framework.
+ Após rodar a migrite 'rodrigo.rossa@ezoom.com.br',
+            'password' => Hash::make('senha456'),
