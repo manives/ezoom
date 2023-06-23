@@ -63,7 +63,7 @@ Para deixar o ambiente do projeto Laravel funcionando, você precisa executar al
 
    Isso criará as tabelas necessárias no banco de dados de acordo com as migrações definidas no diretório `database/migrations`.
    ### Seu usuário para acesso será:
-   "rodrigo.rossa@ezoom.com.br" e senha: "senha456"
+   rodrigo.rossa@ezoom.com.br e senha: senha456
 
 9. Execute o comando php artisan db:seed para popular o banco de dados com dados de exemplo.
 ```
