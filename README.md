@@ -65,15 +65,18 @@ Para deixar o ambiente do projeto Laravel funcionando, você precisa executar al
    ### Seu usuário para acesso será:
    "rodrigo.rossa@ezoom.com.br" e senha: "senha456"
 
-10. Execute o comando php artisan db:seed para popular o banco de dados com dados de exemplo.
+9. Execute o comando php artisan db:seed para popular o banco de dados com dados de exemplo.
 ```
 php artisan db:seed
 ```
 
-9. Por fim, inicie o servidor de desenvolvimento do Laravel com o seguinte comando:
+10. Agora você precisará rodar o comando para poder gerar a secret do JWT;
+```
+php artisan jwt:secret
+```
 
-   ```
-   php artisan serve
-   ```
-
-   Isso iniciará o servidor em `http://localhost:8000`, onde você poderá acessar sua aplicação Laravel no navegador.
+11. Inicie o servidor de desenvolvimento do Laravel com o seguinte comando:
+```
+php artisan serve
+```
+Isso iniciará o servidor em `http://localhost:8000`, onde você poderá acessar sua aplicação Laravel no navegador.
