@@ -1,67 +1,79 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Teste Ezoom
+# Repositório contendo a implementação do Teste Ezoom
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Escopo do teste
+1. Esta aplicação, deve conter um CRUD básico de pelo menos duas áreas e relacionamento entre elas. Exemplo: Categorias e Produtos;
+2. Utilize banco de dados MySQL;
+3. Publique seu teste em um repositório no seu perfil no GitHub ou Bitbucket;
+4. Insira no seu README.md instruções / documentação necessária sobre como instalar e usar a sua aplicação;
+5. Sinta-se livre para fazer o layout da aplicação da forma como preferir, utilizando bootstrap, tailwind ou material design.
+6. Utilize seeders no lugar de dumps do SQL se precisarmos de alguma informação pré definida no banco de dados.
+7. Utilize JWT para autenticação para os endpoints e para o CMS.
+### Bônus:
+8. Faça uso de pelo menos um padrão de projeto e explique o motivo por ter escolhido ele.
 
-## About Laravel
+## Padrões de projetos adotado:
+ ```
+MVC (Model-View-Controller): O padrão MVC para separar a lógica de negócios (model), a apresentação dos dados (view) e o controle das interações (controller).
+Strategy: Foi adotado o uso do padrão Strategy para permitir a troca flexível do algorítimo de autenticação pelo padrão JWT;
+ ```
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+ ```
+👁👁 PRÉ REQUISITOS PARA POSSIBILITAR A EXECUÇÃO DOS TESTES, GIT, APACHE, PHP, MYSQL
+ ```
+Para deixar o ambiente do projeto Laravel funcionando, você precisa executar alguns comandos para instalar as dependências, configurar o ambiente e iniciar o servidor. Aqui estão os passos básicos:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. Abra o Terminal ou o prompt de comando no seu sistema.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+2. Navegue até o diretório raiz do projeto Laravel usando o comando `cd`.
 
-## Learning Laravel
+3. Execute o seguinte comando para instalar as dependências do projeto:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+   ```
+   composer install
+   ```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+   Isso irá baixar todas as dependências do Laravel listadas no arquivo `composer.json` e instalá-las no diretório `vendor`.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+4. Depois de instalar as dependências, crie o arquivo `.env` executando o seguinte comando:
 
-## Laravel Sponsors
+   ```
+   cp .env.example .env
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+   Isso irá criar uma cópia do arquivo `.env.example` como `.env`, que contém as configurações do ambiente. Você pode editar esse arquivo para adicionar suas configurações específicas, como conexão com o banco de dados.
 
-### Premium Partners
+5. Edite o arquivo .env novo e altere as informações do banco conforme a sua instalação local do MySQL ou MariaDB
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+6. Gere uma nova chave de aplicativo executando o seguinte comando:
 
-## Contributing
+   ```
+   php artisan key:generate
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   Isso irá gerar uma chave única para sua aplicação Laravel.
 
-## Code of Conduct
+7. Agora, você precisa configurar o banco de dados no arquivo `.env`. Abra o arquivo `.env` em um editor de texto e insira as informações de conexão com o banco de dados, como o nome do banco de dados, o usuário e a senha.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+8. Execute o comando abaixo para executar as migrações do banco de dados:
 
-## Security Vulnerabilities
+   ```
+   php artisan migrate
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   Isso criará as tabelas necessárias no banco de dados de acordo com as migrações definidas no diretório `database/migrations`.
 
-## License
+9. Execute o comando php artisan db:seed para popular o banco de dados com dados de exemplo.
+```
+php artisan db:seed
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# ezoom
+9. Por fim, inicie o servidor de desenvolvimento do Laravel com o seguinte comando:
+
+   ```
+   php artisan serve
+   ```
+
+   Isso iniciará o servidor em `http://localhost:8000`, onde você poderá acessar sua aplicação Laravel no navegador.
+
+Agora o ambiente do projeto Laravel está configurado e você pode começar a desenvolver sua aplicação. Certifique-se de revisar a documentação do Laravel para obter mais detalhes sobre como trabalhar com o framework.
