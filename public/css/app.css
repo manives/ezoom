@@ -1,0 +1,51 @@
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    flex: 0 0 15%;
+    background-color: #f8f9fa;
+    padding: 20px;
+    height: 100vh;
+}
+
+.content {
+    flex: 0 0 75%;
+    padding: 20px;
+}
+
+.welcome-message {
+    margin-bottom: 20px;
+}
+
+.user-thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.top-bar .row .col-md-3{
+    text-align: left;
+}
+
+.top-bar, .bottom-bar {
+    background: #204265;
+    padding: 9px 21px;
+    color: white;
+    text-align: right;
+}
+
+.bottom-bar { background: #3877b6 }
+
+.greetings{ margin-left: 10px; }
+
+.form-group {
+    margin-top: 20px;
+}
+
+.form-default button {
+    margin-top: 30px;
+}
