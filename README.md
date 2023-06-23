@@ -77,6 +77,3 @@ php artisan db:seed
    ```
 
    Isso iniciará o servidor em `http://localhost:8000`, onde você poderá acessar sua aplicação Laravel no navegador.
-
- Após rodar a migrite 'rodrigo.rossa@ezoom.com.br',
-            'password' => Hash::make('senha456'),
