@@ -79,4 +79,4 @@ php artisan jwt:secret
 ```
 php artisan serve
 ```
-Isso iniciará o servidor em `http://localhost:8000`, onde você poderá acessar sua aplicação Laravel no navegador.
+Isso iniciará o servidor em `http://localhost:8000/public/login`, onde você poderá acessar sua aplicação Laravel no navegador.
